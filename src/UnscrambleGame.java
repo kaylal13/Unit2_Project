@@ -3,7 +3,6 @@ public class UnscrambleGame {
     private  String word;
     int randNum;
 
-
     public int getRandNum (){
         randNum = (int)(Math.random()*10)+1;
         return randNum;
@@ -13,7 +12,7 @@ public class UnscrambleGame {
         String level;
         if (randNum<=5){
             level = "Easy";
-        } else level = "hard";
+        } else level = "Hard";
         return level;
     }
 
@@ -25,6 +24,19 @@ public class UnscrambleGame {
         }
 
         return word;
+    }
+
+    public String answer (String userAnswer) {
+        userAnswer = userAnswer.toLowerCase();
+        for (int i = 0, i<userAnswer.length(); i++){
+            String current = userAnswer.substring (i,i+1);
+            if
+        }
+
+
+
+
+        return
     }
 
 }
