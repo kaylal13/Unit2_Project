@@ -18,7 +18,7 @@ public class UnscrambleGame {
 
     public String determineWord (){
         if (randNum<=5){
-            word = "now";
+            word = "fureas";
         } else {
             word = "ahgsertu";
         }
