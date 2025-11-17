@@ -20,23 +20,23 @@ public class UnscrambleGame {
         if (randNum<=5){
             word = "now";
         } else {
-            word = "silent";
+            word = "ahgsertu";
         }
 
         return word;
     }
 
-    public String answer (String userAnswer) {
+    public Boolean answer (String userAnswer, String word) {
         userAnswer = userAnswer.toLowerCase();
-        for (int i = 0, i<userAnswer.length(); i++){
-            String current = userAnswer.substring (i,i+1);
-            if
+        boolean correct = false;
+        for (int i = 0; i < userAnswer.length(); i++) {
+            String current = userAnswer.substring(i, i + 1);
+            String searchWord = word.substring(i, i + 1);
+            if (current.equals(searchWord)) {
+                correct = true;
+            } else correct = false;
         }
-
-
-
-
-        return
+        return correct;
     }
 
 }
