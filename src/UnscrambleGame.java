@@ -4,14 +4,13 @@ public class UnscrambleGame {
     private  String word;
     int randNum;
     boolean correct;
-    String level;
+    String level= "";
 
     public void getRandNum (){
         randNum = (int)(Math.random()*12)+1;
     }
 
     public String determineLevel(){
-        String level = "";
         if (1<=randNum && randNum<=4){
             level = "Easy";
         } else if(randNum>=5 && randNum<=8){
@@ -23,13 +22,13 @@ public class UnscrambleGame {
     }
 
     public String determineWord (){
-        if (level.equals("Easy")){
-            word = "f u r e a s";
+        if (level.equals("Easy")) {
+            word = "fureas";
         } else if (level.equals("Medium")){
-            word = "a h g s e r t u";
+            word = "ahgsertu";
         }
         else {
-            word = "w e o i z m d f l s p k e";
+            word = "weoizmdflspke";
         }
 
         return word;
@@ -38,10 +37,13 @@ public class UnscrambleGame {
     public String result (String userAnswer) {
         userAnswer = userAnswer.toLowerCase();
         String answer = "";
+        String character = "";
+        for (int j=0;j<word.length();j++){
+            character = word.substring(j,j++);
+        }
         for (int i = 0; i < userAnswer.length(); i++) {
             String current = userAnswer.substring(i, i + 1);
-            String searchWord = word.substring(i, i + 1);
-            if (current.equals(searchWord)) {
+            if (current.contains(character)) {
                 correct = true;
                 answer = "Acceptable";
             } else {
@@ -52,6 +54,7 @@ public class UnscrambleGame {
         }
         return answer;
     }
+//now everything returns accepted but it did accept user's answers that contained characters from different indices (error from before)
 
     public void ending (){
         if (correct){
