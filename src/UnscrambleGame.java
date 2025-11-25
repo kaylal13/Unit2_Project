@@ -40,10 +40,11 @@ public class UnscrambleGame {
         String character = "";
         for (int j=0;j<word.length();j++){
             character = word.substring(j,j++);
+            System.out.println(character);
         }
         for (int i = 0; i < userAnswer.length(); i++) {
             String current = userAnswer.substring(i, i + 1);
-            if (current.contains(character)) {
+            if (userAnswer.contains(character)) {
                 correct = true;
                 answer = "Acceptable";
             } else {
@@ -54,6 +55,24 @@ public class UnscrambleGame {
         }
         return answer;
     }
+
+//    public String result (String userAnswer) {
+//        userAnswer = userAnswer.toLowerCase();
+//        String answer = "";
+//        boolean correct = true;
+//        for (int i = 0; i < userAnswer.length(); i++) {
+//            String current = userAnswer.substring(i, i + 1);
+//            String searchWord = word.substring(i, i + 1);
+//            if (current.contains(searchWord)){
+//                correct = true;
+//                answer = "Acceptable";
+//            } else{
+//                correct = false;
+//                answer = "not accepted";
+//            }
+//            }
+//            return answer;
+//        }
 //now everything returns accepted but it did accept user's answers that contained characters from different indices (error from before)
 
     public void ending (){
