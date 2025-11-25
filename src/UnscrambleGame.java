@@ -34,50 +34,67 @@ public class UnscrambleGame {
         return word;
     }
 
+//    public String result (String userAnswer) {
+//        userAnswer = userAnswer.toLowerCase();
+//        String answer = "";
+//        String character = "";
+//        for (int j=0;j<word.length();j++){
+//            character = word.substring(j,j++);
+//            System.out.println(character);
+//        }
+//        for (int i = 0; i < userAnswer.length(); i++) {
+//            String current = userAnswer.substring(i, i + 1);
+//            if (userAnswer.contains(character)) {
+//                correct = true;
+//                answer = "Acceptable";
+//            } else {
+//                correct = false;
+//                answer = "Not accepted";
+//
+//            }
+//        }
+//        return answer;
+//    }
+
+//    public String result (String userAnswer) {
+//        userAnswer = userAnswer.toLowerCase();
+//        String answer = "";
+//        for (int i = 0; i < word.length(); i++) {
+//            String searchWord = word.substring(i, i + 1);
+//            if (userAnswer.contains(searchWord)){
+//                correct = true;
+//                answer = "Acceptable";
+//            } else{
+//                correct = false;
+//                answer = "Not accepted";
+//            }
+//            }
+//            return answer;
+//        }
+
+
     public String result (String userAnswer) {
         userAnswer = userAnswer.toLowerCase();
         String answer = "";
-        String character = "";
-        for (int j=0;j<word.length();j++){
-            character = word.substring(j,j++);
-            System.out.println(character);
+        String searchWord = "";
+        for (int i = 0; i < word.length(); i++) {
+            searchWord = word.substring(i, i + 1);
         }
-        for (int i = 0; i < userAnswer.length(); i++) {
-            String current = userAnswer.substring(i, i + 1);
-            if (userAnswer.contains(character)) {
+        for (int j = 0; j < userAnswer.length(); j++) {
+            if (userAnswer.contains(searchWord)) {
                 correct = true;
                 answer = "Acceptable";
             } else {
                 correct = false;
                 answer = "Not accepted";
-
             }
         }
         return answer;
     }
 
-//    public String result (String userAnswer) {
-//        userAnswer = userAnswer.toLowerCase();
-//        String answer = "";
-//        boolean correct = true;
-//        for (int i = 0; i < userAnswer.length(); i++) {
-//            String current = userAnswer.substring(i, i + 1);
-//            String searchWord = word.substring(i, i + 1);
-//            if (current.contains(searchWord)){
-//                correct = true;
-//                answer = "Acceptable";
-//            } else{
-//                correct = false;
-//                answer = "not accepted";
-//            }
-//            }
-//            return answer;
-//        }
-//now everything returns accepted but it did accept user's answers that contained characters from different indices (error from before)
-
     public void ending (){
         if (correct){
             System.out.println("Congrats you win!");
-        } else System.out.println("You lose!");
+        } else System.out.println("You lost!");
     }
 }
