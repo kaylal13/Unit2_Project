@@ -34,59 +34,24 @@ public class UnscrambleGame {
         return word;
     }
 
-//    public String result (String userAnswer) {
-//        userAnswer = userAnswer.toLowerCase();
-//        String answer = "";
-//        String character = "";
-//        for (int j=0;j<word.length();j++){
-//            character = word.substring(j,j++);
-//            System.out.println(character);
-//        }
-//        for (int i = 0; i < userAnswer.length(); i++) {
-//            String current = userAnswer.substring(i, i + 1);
-//            if (userAnswer.contains(character)) {
-//                correct = true;
-//                answer = "Acceptable";
-//            } else {
-//                correct = false;
-//                answer = "Not accepted";
-//
-//            }
-//        }
-//        return answer;
-//    }
-
-//    public String result (String userAnswer) {
-//        userAnswer = userAnswer.toLowerCase();
-//        String answer = "";
-//        for (int i = 0; i < word.length(); i++) {
-//            String searchWord = word.substring(i, i + 1);
-//            if (userAnswer.contains(searchWord)){
-//                correct = true;
-//                answer = "Acceptable";
-//            } else{
-//                correct = false;
-//                answer = "Not accepted";
-//            }
-//            }
-//            return answer;
-//        }
-
 
     public String result (String userAnswer) {
         userAnswer = userAnswer.toLowerCase();
         String answer = "";
         String searchWord = "";
-        for (int i = 0; i < word.length(); i++) {
-            searchWord = word.substring(i, i + 1);
-        }
-        for (int j = 0; j < userAnswer.length(); j++) {
-            if (userAnswer.contains(searchWord)) {
-                correct = true;
-                answer = "Acceptable";
-            } else {
-                correct = false;
-                answer = "Not accepted";
+        String answerChar = "";
+        for (int i = 0; i < userAnswer.length(); i++) {
+            searchWord = userAnswer.substring(i, i + 1);
+            for (int j = 0; j < word.length(); j++) {
+                answerChar = word.substring(j,j+1);
+                if (searchWord.contains(answerChar)) {
+                    correct = true;
+                    answer = "Acceptable";
+                    break;
+                } else {
+                    correct = false;
+                    answer = "Not accepted";
+                }
             }
         }
         return answer;
@@ -98,3 +63,4 @@ public class UnscrambleGame {
         } else System.out.println("You lost!");
     }
 }
+

@@ -15,7 +15,5 @@ public class Main {
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println("Your answer is: "+game.result(userAnswer));
         game.ending();
-
-
     }
 }
